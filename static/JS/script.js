@@ -56,7 +56,7 @@ function select_notas(){
 
 
 function registrar_dados(titulo_registro, descricao_registro) {
-   
+
     fetch('/registrar', {
         method: 'POST',
         headers: {
@@ -71,10 +71,14 @@ function registrar_dados(titulo_registro, descricao_registro) {
     .then(data => {
 
         let area_box = document.getElementById("area-notas");
-        area_box.innerHTML = "";
-
+        area_box.innerHTML = "";  
 
         data.forEach(registro => {
+
+            const box_notas = document.createElement("div");
+            box_notas.classList.add("box_notas");
+
+
             const area_titulo = document.createElement("div");
             area_titulo.classList.add("area_titulo");
 
@@ -87,14 +91,17 @@ function registrar_dados(titulo_registro, descricao_registro) {
             const descricao = document.createElement("p");
             descricao.textContent = registro.descricao;
 
-            area_box.appendChild(area_titulo);
-            area_titulo.appendChild(titulo);
-            area_box.appendChild(area_descricao);
-            area_descricao.appendChild(descricao);
+            area_box.appendChild(box_notas);
 
+            box_notas.appendChild(area_titulo);
+            box_notas.appendChild(area_descricao);
+
+            area_titulo.appendChild(titulo);
+            area_descricao.appendChild(descricao);
         });
     })
 }
+
 
 document.getElementById("form-registro").addEventListener("submit", function(event){
     event.preventDefault();
