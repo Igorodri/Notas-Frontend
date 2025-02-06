@@ -69,6 +69,7 @@ function registrar_dados(titulo_registro, descricao_registro) {
     })
     .then(response => response.json())
     .then(data => {
+        select_notas();
 
         let area_box = document.getElementById("area-notas");
         area_box.innerHTML = "";  
@@ -146,5 +147,24 @@ document.getElementById("form-excluir").addEventListener("submit", function(even
 });
 
 
+function deletar_all(){
+    fetch('/excluir_all', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(data =>{
+        console.log(data.mensagem)
+        select_notas();
+    })
+    .catch(error => console.error("Erro ao excluir registro", error));
+}
 
-select_notas()
+document.getElementById("btn_excluir_all").addEventListener("click", function(){
+    deletar_all();
+})
+
+
+select_notas();
