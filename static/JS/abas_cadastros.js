@@ -22,7 +22,6 @@ btn_registro.addEventListener("click",function(){
 
 btn_sair_registro.addEventListener("click", function(){
     aba_registro.style.display = 'none'
-    location.reload();
 })
 
 
