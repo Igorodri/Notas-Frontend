@@ -317,7 +317,27 @@ h3{
     position: fixed;
 }
 
+.container-editar input{
+    width: 250px;
+    margin: 10px 0 10px 0;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
 
+.container-editar textarea{
+    width: 300px;
+    height: 300px;
+    resize:none;
+    border-radius: 3px;
+}
+
+#form_editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 
 

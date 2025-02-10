@@ -124,27 +124,23 @@
                     <button class="sair" id="sair_editar">X</button>
                 </div>
 
-                <div class="container-registro">
+                <div class="container-editar">
 
-                    <input type="text" placeholder="Digite o título da nota" id="">
+                    <form id="form_editar">
+                        <input type="number" placeholder="Digite o ID da nota que deseja alterar." id="id_edit">
+                        <input type="text" placeholder="Digite o novo título da nota" id="titulo_edit">
+                        <textarea name="descricao_edit" id="descricao_edit" placeholder="Digite a nova descrição da nota"></textarea>
 
-                    <textarea name="" id=""></textarea>
+                        <div class="area_btn">
+                            <button type="submit" id="btn_editar">Editar</button>
+                        </div>
+                    </form>
+
+
                 </div>
-
-                <div class="area_btn">
-                    <button id="btn_registrar">Registrar</button>
-                </div>
-
 
             </div>
 
-
-
-
-        
-        <footer>
-
-        </footer>
     </main>
 
     <script src="../static/JS/abas_cadastros.js"></script>

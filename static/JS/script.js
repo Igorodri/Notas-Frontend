@@ -166,5 +166,46 @@ document.getElementById("btn_excluir_all").addEventListener("click", function(){
     deletar_all();
 })
 
+function editar(id_editar){
+    fetch('/editar',{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+            id: id_editar
+        })
+    })
+    .then(response => response.json())
+    .then(data =>{
+        console.log(data.mensagem);
+        select_notas();
+
+        const titulo_editar = document.querySelector(".titulo");
+        const descricao_editar = document.querySelector(".descricao");
+
+        const new_titulo = document.getElementById("titulo_edit");
+        const new_descricao = document.getElementById("descricao_edit");
+
+        titulo_editar.textContent = new_titulo.textContent;
+        descricao_editar.textContent = new_descricao.textContent;
+
+    })
+    .catch(error => console.error("Erro ao editar registro", error));
+}
+
+document.getElementById("btn_editar").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const id_registro_editar = document.getElementById("id_edit").value;
+
+    console.log(id_registro_editar);
+
+    editar(id);
+
+    document.getElementById('form_editar').reset()
+})
+
 
 select_notas();
