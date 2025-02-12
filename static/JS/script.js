@@ -174,7 +174,7 @@ document.getElementById("btn_excluir_all").addEventListener("click", function(){
 })
 
 function editar_registros(id_editar,novo_titulo,nova_descricao){
-    fetch('/editar',{
+    fetch('/editar', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -185,21 +185,22 @@ function editar_registros(id_editar,novo_titulo,nova_descricao){
             titulo: novo_titulo,
             descricao: nova_descricao
         })
+        
     })
     .then(response => response.json())
-    .then(data =>{
-        console.log(data.mensagem)
+    .then(data => {
+        console.log(data.mensagem);
         select_notas();
 
-        const titulo_editar = document.querySelector(".titulo");
-        const descricao_editar = document.querySelector(".descricao");
+        alert("Nota editada com sucesso!")
 
-        titulo_editar.textContent = novo_titulo
-        descricao_editar.textContent = nova_descricao
+        const titulo = document.querySelector(".titulo");
+        const descricao = document.querySelector(".descricao");
 
-        alert("Dados alterados com sucesso!");
+        titulo.textContent = novo_titulo;
+        descricao.textContent = nova_descricao
     })
-    .catch(error => console.error("Erro ao excluir registro", error));
+    .catch(error => console.log("Erro ao editar registro", error))
 }
 
 document.getElementById('form_editar').addEventListener('submit', function(event){
