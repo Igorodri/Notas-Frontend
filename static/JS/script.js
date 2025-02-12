@@ -70,6 +70,7 @@ function registrar_dados(titulo_registro, descricao_registro) {
     .then(response => response.json())
     .then(data => {
         select_notas();
+        alert("Nota criada com sucesso!")
 
         let area_box = document.getElementById("area-notas");
         area_box.innerHTML = "";  
@@ -84,12 +85,14 @@ function registrar_dados(titulo_registro, descricao_registro) {
             area_titulo.classList.add("area_titulo");
 
             const titulo = document.createElement("h3");
+            titulo.classList.add(".titulo")
             titulo.textContent = registro.titulo;
 
             const area_descricao = document.createElement("div");
             area_descricao.classList.add("area_descricao");
 
             const descricao = document.createElement("p");
+            descricao.classList.add(".descricao")
             descricao.textContent = registro.descricao;
 
             area_box.appendChild(box_notas);
@@ -99,7 +102,9 @@ function registrar_dados(titulo_registro, descricao_registro) {
 
             area_titulo.appendChild(titulo);
             area_descricao.appendChild(descricao);
+
         });
+        
     })
 }
 
@@ -130,6 +135,7 @@ function deletar_registros(id_excluir){
     .then(data =>{
         console.log(data.mensagem)
         select_notas();
+        alert("Nota deletada com sucesso!");
     })
     .catch(error => console.error("Erro ao excluir registro", error));
 }
@@ -158,6 +164,7 @@ function deletar_all(){
     .then(data =>{
         console.log(data.mensagem)
         select_notas();
+        alert("Todas as Notas foram deletadas com sucesso!");
     })
     .catch(error => console.error("Erro ao excluir registro", error));
 }
@@ -166,7 +173,7 @@ document.getElementById("btn_excluir_all").addEventListener("click", function(){
     deletar_all();
 })
 
-function editar(id_editar){
+function editar_registros(id_editar,novo_titulo,nova_descricao){
     fetch('/editar',{
         method: 'PUT',
         headers: {
@@ -174,37 +181,40 @@ function editar(id_editar){
         },
 
         body: JSON.stringify({
-            id: id_editar
+            id: id_editar,
+            titulo: novo_titulo,
+            descricao: nova_descricao
         })
     })
     .then(response => response.json())
     .then(data =>{
-        console.log(data.mensagem);
+        console.log(data.mensagem)
         select_notas();
 
         const titulo_editar = document.querySelector(".titulo");
         const descricao_editar = document.querySelector(".descricao");
 
-        const new_titulo = document.getElementById("titulo_edit");
-        const new_descricao = document.getElementById("descricao_edit");
+        titulo_editar.textContent = novo_titulo
+        descricao_editar.textContent = nova_descricao
 
-        titulo_editar.textContent = new_titulo.textContent;
-        descricao_editar.textContent = new_descricao.textContent;
-
+        alert("Dados alterados com sucesso!");
     })
-    .catch(error => console.error("Erro ao editar registro", error));
+    .catch(error => console.error("Erro ao excluir registro", error));
 }
 
-document.getElementById("btn_editar").addEventListener("submit", function(event){
+document.getElementById('form_editar').addEventListener('submit', function(event){
     event.preventDefault();
 
     const id_registro_editar = document.getElementById("id_edit").value;
+    const titulo_registro_editar = document.getElementById("titulo_edit").value
+    const descricao_registro_editar = document.getElementById("descricao_edit").value
 
     console.log(id_registro_editar);
 
-    editar(id);
+    editar_registros(id_registro_editar, titulo_registro_editar, descricao_registro_editar);
 
     document.getElementById('form_editar').reset()
+
 })
 
 

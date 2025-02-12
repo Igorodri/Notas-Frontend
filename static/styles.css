@@ -60,7 +60,7 @@ h3{
     position: fixed;
     top: 40px;
     left: 0;
-    margin: 90px 20px 0 20px;
+    margin: 90px 20px 0 80px;
 }
 
 #area-btn{
@@ -112,7 +112,7 @@ h3{
 
 /* Aba Resultados */
 #aba_resultados {
-    margin-left: 30%;
+    margin-left: 35%;
     width: 70%;
     height: 100%;
     background-color: rgb(203, 201, 201);
