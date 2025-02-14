@@ -12,14 +12,4 @@ function configurarAbas(btn_id, aba_page, btn_sair){
     })
 }
 
-configurarAbas('registrar', 'aba_registros', 'sair_registro');
-configurarAbas('excluir','aba_excluir','sair_excluir');
-configurarAbas('editar','aba_editar','sair_editar');
-
-document.getElementById("sair_page").addEventListener("click", function(){
-    window.location.href = "/";  
-})
-
-
-
-
+configurarAbas('cadastrar','aba_login','sair_cadastro');
