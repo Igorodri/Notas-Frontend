@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Notas</title>
 </head>
 <body>
@@ -73,7 +74,7 @@
                         <textarea name="descricao" id="descricao_registro" placeholder="Digite a descrição da sua nota"></textarea>
 
                         <div class="area_btn">
-                            <button type="submit" id="btn_registrar">Registrar</button>
+                            <button type="submit" id="btn_registrar" class="btn_pages">Registrar</button>
                         </div>
                     </form>
                     
@@ -97,11 +98,11 @@
                             <input type="number" placeholder="Digite o ID da nota que deseja apagar" id="id_excluir">
     
                             <div class="area_btn">
-                                <button type="submit" id="btn_excluir">Excluir</button>
+                                <button type="submit" id="btn_excluir" class="btn_pages">Excluir</button>
                             </div>
 
                             <div class="area_btn">
-                                <button type="submit" id="btn_excluir_all">Excluir Todos os Registros</button>
+                                <button type="submit" id="btn_excluir_all" class="btn_pages">Excluir Todos os Registros</button>
                             </div>
 
                             
@@ -131,7 +132,7 @@
                         <textarea name="descricao_edit" id="descricao_edit" placeholder="Digite a nova descrição da nota"></textarea>
 
                         <div class="area_btn">
-                            <button type="submit" id="btn_editar">Editar</button>
+                            <button type="submit" id="btn_editar" class="btn_pages">Editar</button>
                         </div>
                     </form>
 
@@ -145,5 +146,6 @@
     <script type="module" src="./static/JS/abas_cadastros.js"></script>
     <script type="module" src="./static/JS/window_move.js"></script>
     <script type="module" src="./static/JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

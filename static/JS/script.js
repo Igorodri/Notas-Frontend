@@ -50,7 +50,25 @@ function select_notas(){
             area_box.appendChild(box_notas);
         });
     })
-    .catch(error => console.error("Erro ao buscar novas notas", error));
+    .catch(error => {
+        console.error("Erro ao buscar novas notas", error)
+
+        Toastify({
+            text: "Erro ao listar as notas",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right,rgb(206, 19, 19),rgb(188, 29, 29))"
+            },
+            onClick: function(){} 
+            }).showToast();
+
+    });
 }
 
 
@@ -71,7 +89,20 @@ function registrar_dados(titulo_registro, descricao_registro) {
     .then(response => response.json())
     .then(data => {
         select_notas();
-        alert("Nota criada com sucesso!")
+        Toastify({
+            text: "Nota registrada com sucesso!",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right,rgb(19, 206, 31),rgb(50, 188, 29))"
+            },
+            onClick: function(){} 
+            }).showToast();
 
         let area_box = document.getElementById("area-notas");
         area_box.innerHTML = "";  
@@ -107,6 +138,11 @@ function registrar_dados(titulo_registro, descricao_registro) {
         });
         
     })
+    .catch(error => {
+        console.error("Erro ao registrar nota: ",error)
+
+    })
+        
 }
 
 
@@ -136,10 +172,41 @@ function deletar_registros(id_excluir){
     .then(data =>{
         console.log(data.mensagem)
         select_notas();
-        alert("Nota deletada com sucesso!");
+        Toastify({
+            text: "Nota deletada com sucesso!",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right,rgb(19, 206, 31),rgb(50, 188, 29))"
+            },
+            onClick: function(){} 
+            }).showToast();
     })
-    .catch(error => console.error("Erro ao excluir registro", error));
-}
+    .catch(error => {
+        console.error("Erro ao excluir registro", error)
+
+        Toastify({
+                text: "Erro ao deletar nota",
+                duration: 2000,
+                destination: "",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right", 
+                stopOnFocus: true, 
+                style: {
+                    background: "linear-gradient(to right,rgb(206, 19, 19),rgb(188, 29, 29))"
+                },
+                onClick: function(){} 
+                }).showToast();
+    })
+            
+    };
 
 document.getElementById("form-excluir").addEventListener("submit", function(event){
     event.preventDefault();
@@ -165,10 +232,42 @@ function deletar_all(){
     .then(data =>{
         console.log(data.mensagem)
         select_notas();
-        alert("Todas as Notas foram deletadas com sucesso!");
+        Toastify({
+            text: "Todas as notas foram deletadas com sucesso!",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right,rgb(19, 206, 31),rgb(50, 188, 29))"
+            },
+            onClick: function(){} 
+            }).showToast();
     })
-    .catch(error => console.error("Erro ao excluir registro", error));
-}
+    .catch(error => {
+        console.error("Erro ao excluir registro", error);
+        Toastify({
+            text: "Erro ao deletar todas as notas",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right, rgb(206, 19, 19), rgb(188, 29, 29))"
+            },
+            onClick: function(){} 
+        }).showToast();
+    });
+
+           
+    };
+
 
 document.getElementById("btn_excluir_all").addEventListener("click", function(){
     deletar_all();
@@ -193,7 +292,20 @@ function editar_registros(id_editar,novo_titulo,nova_descricao){
         console.log(data.mensagem);
         select_notas();
 
-        alert("Nota editada com sucesso!")
+        Toastify({
+            text: "Nota editada com sucesso",
+            duration: 2000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "linear-gradient(to right,rgb(19, 206, 31),rgb(50, 188, 29))"
+            },
+            onClick: function(){} 
+            }).showToast();
 
         const titulo = document.querySelector(".titulo");
         const descricao = document.querySelector(".descricao");
