@@ -121,11 +121,6 @@ h3{
 
 
 
-
-
-
-
-
 /* Aba Resultados */
 #aba_resultados {
     margin-left: 35%;
@@ -203,15 +198,17 @@ h3{
 /* Abas de cadastros*/
 .janela {
     position: absolute;
-    width: 300px;
-    height: 200px;
     background-color: rgb(0, 94, 255);
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
+    width: 400px;
+    height: 550px;
+    background-color: rgb(203, 201, 201);
+    border: none;
+    display: none;
+    position: fixed;
 }
-
 
 
 .area_titulo_aba {
@@ -234,6 +231,7 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid transparent;
 }
 
 
@@ -287,24 +285,7 @@ h3{
 
 
 
-
-
-
-
-
-
-
-
 /* Aba Registro */
-#aba_registros{
-    width: 400px;
-    height: 550px;
-    background-color: rgb(203, 201, 201);
-    border: 1px solid black;
-    display: none;
-    position: fixed;
-}
-
 #form-registro{
     display: flex;
     justify-content: center;
@@ -312,26 +293,6 @@ h3{
     flex-direction: column;
 }
 
-/* Aba Excluir */
-#aba_excluir{
-    width: 400px;
-    height: 550px;
-    background-color: rgb(203, 201, 201);
-    border: 1px solid black;
-    display: none;
-    position: fixed;
-}
-
-
-/* Aba Editar */
-#aba_editar{
-    width: 400px;
-    height: 550px;
-    background-color: rgb(203, 201, 201);
-    border: 1px solid black;
-    display: none;
-    position: fixed;
-}
 
 .container-editar input{
     width: 250px;
@@ -355,82 +316,6 @@ h3{
     flex-direction: column;
 }
 
-/* Login - Cadastro */
-#aba_login_cadastro{
-    width: 500px;
-    height: 100%;
-    background-color: rgb(203, 201, 201);
-    border-radius: 10px;
-}
 
-
-
-#form-usuarios, #form-cadastrar, #area-btn-cadastro{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#form-usuarios input{
-    width: 250px;
-    padding: 4px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    margin-top: -2px;
-}
-
-#area-btn-cadastro button{
-    width: 150px;
-    padding: 4px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    transition: 0.2s;
-}
-
-#area-btn-cadastro button:hover{
-    background-color: rgb(0, 94, 255);
-    color: white;
-    transition: 0.2s;
-}
-
-#area-btn-cadastro span{
-    color: white;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-#area-btn-cadastro span:hover{
-    color: rgb(0, 94, 255);
-    transition: 0.2s;
-}
-
-#aba_login{
-    width: 400px;
-    height: 300px;
-    background-color: rgb(203, 201, 201);
-    border: 1px solid black;
-    display: none;
-    position: fixed;
-}
-
-#form-cadastrar input{
-    margin-bottom: 3px;
-}
-
-
-
-/* footer */
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: black;
-    text-align: start;
-    margin-bottom: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
 
 

@@ -1,10 +1,11 @@
 function select_notas(){
-    fetch("/notas")
+    fetch("http://127.0.0.1:5000/notas")
     .then(response => response.json())
     .then(data =>{
 
-        let area_box = document.getElementById("area-notas");
+        console.log(data);
 
+        let area_box = document.getElementById("area-notas");
         area_box.innerHTML="";
 
         data.forEach(nota => {
@@ -57,7 +58,7 @@ function select_notas(){
 
 function registrar_dados(titulo_registro, descricao_registro) {
 
-    fetch('/registrar', {
+    fetch('http://127.0.0.1:5000/registrar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -121,7 +122,7 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
 });
 
 function deletar_registros(id_excluir){
-    fetch('/excluir', {
+    fetch('http://127.0.0.1:5000/excluir', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -154,7 +155,7 @@ document.getElementById("form-excluir").addEventListener("submit", function(even
 
 
 function deletar_all(){
-    fetch('/excluir_all', {
+    fetch('http://127.0.0.1:5000/excluir_all', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -174,7 +175,7 @@ document.getElementById("btn_excluir_all").addEventListener("click", function(){
 })
 
 function editar_registros(id_editar,novo_titulo,nova_descricao){
-    fetch('/editar', {
+    fetch('http://127.0.0.1:5000/editar', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
