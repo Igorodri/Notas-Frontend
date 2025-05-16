@@ -1,28 +1,29 @@
-
-/* estilizações gerais */
-*{
+/* === Reset e Estilizações Gerais === */
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
-header{
+/* === Cabeçalho === */
+header {
     background-color: rgb(0, 94, 255);
     padding: 4px;
 }
 
-header h2{
+header h2 {
     text-align: start;
     color: white;
     margin-left: 100px;
     font-size: 29px;
 }
 
+/* === Conteúdo Principal === */
 main {
     display: flex;
     justify-content: center;
@@ -33,27 +34,30 @@ main {
     position: relative;
 }
 
+h3 {
+    margin-left: 25px;
+}
 
-#container-cabecalho_cadastro,#container-cabecalho_resultados,.area_titulo_aba{
+.area_descricao p,
+.area_titulo h3,
+.footer span {
+    margin-left: 30px;
+}
+
+/* === Título de Seções === */
+#container-cabecalho_cadastro,
+#container-cabecalho_resultados,
+.area_titulo_aba {
     background-color: rgb(0, 94, 255);
     padding: 10px;
     color: white;
 }
 
-h3{
-    margin-left: 25px;
-}
-
-.area_descricao p, .area_titulo h3, .footer span{
-    margin-left: 30px;
-}
-
-
-/*Aba Cadastro*/
+/* === Aba Cadastro === */
 #aba_cadastro {
     width: 30%;
     height: 400px;
-    background-color: rgb(203, 201, 201);
+    background-color: rgb(226, 226, 226);
     border-radius: 10px;
     position: fixed;
     top: -15px;
@@ -61,12 +65,12 @@ h3{
     margin: 147px 20px 0 80px;
 }
 
-#area-btn{
+#area-btn {
     display: flex;
     flex-direction: column;
 }
 
-#area-btn button{
+#area-btn button {
     width: 200px;
     margin-top: 15px;
     padding: 10px;
@@ -78,149 +82,132 @@ h3{
     cursor: pointer;
 }
 
-#registrar{
+#registrar {
     background-color: rgba(25, 201, 2, 0.832);
 }
 
-#registrar:hover{
+#registrar:hover {
     background-color: rgba(39, 218, 15, 0.832);
 }
 
-#editar{
+#editar {
     background-color: rgba(255, 238, 0, 0.821);
 }
 
-#editar:hover{
+#editar:hover {
     background-color: rgba(255, 242, 54, 0.821);
 }
 
-#excluir{
+#excluir {
     background-color: rgba(255, 0, 0, 0.706);
 }
 
-#excluir:hover{
+#excluir:hover {
     background-color: rgba(255, 26, 26, 0.706);
 }
 
-
-#container-corpo_cadastro{
+#container-corpo_cadastro {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
 }
 
-
-
-/* Aba Resultados */
+/* === Aba Resultados === */
 #aba_resultados {
     margin-left: 35%;
     width: 70%;
-    height: 100%;
-    background-color: rgb(203, 201, 201);
+    background-color: rgb(226, 226, 226);
     border-radius: 10px;
 }
 
-#container-cabecalho_resultados{
+#container-cabecalho_resultados {
     margin-bottom: 80px;
 }
 
-#area-notas{
+#area-notas {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.box_notas{
-    width:  90%;
+.box_notas {
+    width: 90%;
     min-height: 180px;
-    height: 100%;
     padding-bottom: 10px;
     background-color: white;
     margin-bottom: 80px;
     border-radius: 10px;
     word-wrap: break-word;
-    box-sizing: border-box;
     position: relative;
+    box-sizing: border-box;
 }
 
-.area_titulo{
-    border-bottom: 1px solid gray;
+.area_titulo {
     display: flex;
     justify-content: start;
     background-color: rgb(0, 94, 255);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom: 1px solid gray;
 }
 
-.area_titulo h3{
-    margin-left: 30px;
+.area_titulo h3 {
     color: white;
+    margin-left: 30px;
 }
 
-
-.area_descricao{            
-    padding: 0;   
-    margin: 0;          
+.area_descricao {
     box-sizing: border-box;
-    overflow: hidden;     
     overflow-y: auto;
 }
 
-.area_descricao p{
-    margin-right: 35px;
-    margin-top: 15px;
-    margin-bottom: 40px;
+.area_descricao p {
+    margin: 15px 35px 40px 30px;
 }
 
-.titulo{
+.titulo {
     margin-top: 35px;
 }
 
-.id{
+.id {
     border: 2px solid rgb(0, 94, 255);
     padding: 20px;
     margin-left: 20px;
     border-radius: 10px;
     font-weight: bold;
     background-color: white;
-    color: rgb(0, 94, 255)
+    color: rgb(0, 94, 255);
 }
 
-
-/* Abas de cadastros*/
+/* === Janelas de Cadastro === */
 .janela {
-    position: absolute;
-    background-color: rgb(0, 94, 255);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
     width: 400px;
     height: 550px;
-    background-color: rgb(203, 201, 201);
-    border: none;
+    background-color: rgb(226, 226, 226);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     display: none;
     position: fixed;
+    border: none;
 }
 
-
 .area_titulo_aba {
-    background-color: rgb(0, 94, 255);
-    user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
     cursor: grab;
 }
-
 
 .conteudo {
     padding: 20px;
 }
 
-
-.container-aba{
+.container-aba,
+.container-editar {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -228,31 +215,31 @@ h3{
     border: 1px solid transparent;
 }
 
-
-.container-aba input{
+.container-aba input,
+.container-editar input {
     width: 250px;
-    margin: 20px 0 20px 0;
+    margin: 10px 0;
     padding: 4px;
     border-radius: 5px;
     border: 1px solid transparent;
 }
 
-.container-aba textarea{
+.container-aba textarea,
+.container-editar textarea {
     width: 300px;
     height: 300px;
-    resize:none;
+    resize: none;
     border-radius: 3px;
 }
 
-.area_btn{
+.area_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
 }
 
-.area_btn button{
-    transition: 0.2s;
+.area_btn button {
     width: 200px;
     padding: 10px;
     background-color: rgb(0, 94, 255);
@@ -260,14 +247,14 @@ h3{
     border-radius: 10px;
     color: white;
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.area_btn button:hover{
-    transition: 0.2s;
+.area_btn button:hover {
     background-color: rgb(31, 111, 251);
 }
 
-.sair{
+.sair {
     background-color: red;
     width: 30px;
     height: 30px;
@@ -277,40 +264,11 @@ h3{
     cursor: pointer;
 }
 
-
-
-
-/* Aba Registro */
-#form-registro{
+/* === Formulários === */
+#form-registro,
+#form_editar {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
-
-
-.container-editar input{
-    width: 250px;
-    margin: 10px 0 10px 0;
-    padding: 4px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-}
-
-.container-editar textarea{
-    width: 300px;
-    height: 300px;
-    resize:none;
-    border-radius: 3px;
-}
-
-#form_editar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-
-

@@ -1,3 +1,4 @@
+//Função para listar as notas
 function select_notas(){
     fetch("http://127.0.0.1:5000/notas")
     .then(response => response.json())
@@ -73,7 +74,7 @@ function select_notas(){
 
 
 
-
+//Função para registrar as notas novas
 function registrar_dados(titulo_registro, descricao_registro) {
 
     fetch('http://127.0.0.1:5000/registrar', {
@@ -157,6 +158,7 @@ document.getElementById("form-registro").addEventListener("submit", function(eve
     document.getElementById('form-registro').reset()
 });
 
+//Função para deletar registros a partir do id da nota
 function deletar_registros(id_excluir){
     fetch('http://127.0.0.1:5000/excluir', {
         method: 'DELETE',
@@ -220,7 +222,7 @@ document.getElementById("form-excluir").addEventListener("submit", function(even
     document.getElementById('form-excluir').reset()
 });
 
-
+//Função para deletar todas as notas
 function deletar_all(){
     fetch('http://127.0.0.1:5000/excluir_all', {
         method: 'DELETE',
@@ -273,6 +275,8 @@ document.getElementById("btn_excluir_all").addEventListener("click", function(){
     deletar_all();
 })
 
+
+//Função editar os registros
 function editar_registros(id_editar,novo_titulo,nova_descricao){
     fetch('http://127.0.0.1:5000/editar', {
         method: 'PUT',
@@ -330,8 +334,6 @@ document.getElementById('form_editar').addEventListener('submit', function(event
     document.getElementById('form_editar').reset()
 
 })
-
-
 
 
 
